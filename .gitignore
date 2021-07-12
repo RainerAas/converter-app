@@ -1,0 +1,8 @@
+# Project exclude paths
+/target
+/out
+*.class
+*.jar
+/.idea/*
+!/.idea/misc.xml
+!/.idea/modules.xml

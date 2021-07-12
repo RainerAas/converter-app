@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" stylesheets="@styles.css" vgap="10"
+          xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="app.Main">
+
+    <VBox alignment="CENTER" prefWidth="350" spacing="20">
+
+        <padding><Insets bottom="25" top="25" /></padding>
+
+        <children>
+
+            <Button fx:id="temperatureWindowButton" onAction="#handleButtonClick" text="Convert temperatures" />
+            <Button fx:id="currencyWindowButton" onAction="#handleButtonClick" text="Convert currencies" />
+
+        </children>
+
+    </VBox>
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+</GridPane>
