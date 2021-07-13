@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.util.logging.Level;
@@ -32,10 +33,11 @@ public class Main extends Application {
              // if "fx:controller" is not set in fxml
              // fxmlLoader.setController(NewWindowController);
 
-            Scene scene = new Scene(fxmlLoader.load(), 250, 200);
+            Scene scene = new Scene(fxmlLoader.load(), 250, 250);
             Stage stage = new Stage();
             stage.setTitle("Temperature converter");
             stage.setScene(scene);
+            stage.setResizable(false);
             stage.show();
         } catch (IOException e) {
             Logger logger = Logger.getLogger(getClass().getName());

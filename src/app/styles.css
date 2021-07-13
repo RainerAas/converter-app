@@ -47,14 +47,13 @@
     -fx-background-insets: 5px;
 }
 
-.resultText {
-    -fx-pref-width: 100px;
 
+.generalText {
     -fx-text-fill: white;
     -fx-font-family: Arial;
+    -fx-font-weight: bold;
     -fx-font-size: 14px;
-    -fx-font-weight: bolder;
-
+    -fx-text-alignment: center;
 }
 
 /*Other effects*/

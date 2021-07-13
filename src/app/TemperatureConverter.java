@@ -11,23 +11,27 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class TemperatureConverter extends Application {
 
     ObservableList<String> temperatureChoiceList =
-            FXCollections.observableArrayList("\u00b0C to \u00b0F", "\u00b0F to \u00b0C");
+            FXCollections.observableArrayList("\u00b0C", "\u00b0F");
 
     // ℃ = \u2103
     // ℉ = \u2109
     // ° = \u00b0
 
     @FXML
-    public TextField entry;
+    public Text topText;
 
     @FXML
     public ChoiceBox temperatureChoiceBox;
+
+    @FXML
+    public TextField entry;
 
     @FXML
     public Button calculateButton;
@@ -37,36 +41,44 @@ public class TemperatureConverter extends Application {
 
     @FXML
     private void initialize() {
-        //Add "C to F" and "F to C" to choices.
+        //Add "C" and "F" to choices.
         temperatureChoiceBox.setItems(temperatureChoiceList);
-        temperatureChoiceBox.setValue("\u00b0C to \u00b0F");
+        temperatureChoiceBox.setValue("\u00b0C");
     }
 
     //Main temperature converting method.
     public void convertTemperatures() {
         Object choiceBoxValue = temperatureChoiceBox.getValue();
-        //C to F
-        if (choiceBoxValue == "\u00b0C to \u00b0F") {
+        //C -> F, K
+        if (choiceBoxValue == "\u00b0C") {
             //Continue only on numbers.
             if (checkDigits(entry.getText())) {
                 CoreLogic coreLogic = new CoreLogic();
-                double roundOff = Math.round(coreLogic.convertCToF(Double.parseDouble(entry.getText())) * 1000) / 1000.0;
-                String result = String.valueOf(roundOff);
-                String textResult = String.format("Result: %s \u00b0F", result);
+                double roundOffF = Math.round(coreLogic.convertCToF(Double.parseDouble(entry.getText())) * 1000) / 1000.0;
+                double roundOffK = Math.round(coreLogic.convertCToK(Double.parseDouble(entry.getText())) * 1000) / 1000.0;
+                String resultOne = String.valueOf(roundOffF);
+                String resultTwo = String.valueOf(roundOffK);
+                String textResult = "Results:\n" + resultOne + " \u00b0F" + "\n" + resultTwo + " K";
                 resultText.setText(textResult);
+                resultText.setManaged(true);
+                resultText.setVisible(true);
             } else {
                 //If user entry isn't a number, show appropriate alert message.
                 converterEntryError();
             }
-        //F to C
-        } else if (choiceBoxValue == "\u00b0F to \u00b0C"){ //F to C
+        //F -> C, K
+        } else if (choiceBoxValue == "\u00b0F"){
             //Continue only on numbers.
             if (checkDigits(entry.getText())) {
                 CoreLogic coreLogic = new CoreLogic();
-                double roundOff = Math.round(coreLogic.convertFToC(Double.parseDouble(entry.getText())) * 1000) / 1000.0;
-                String result = String.valueOf(roundOff);
-                String textResult = String.format("Result: %s \u00b0C", result);
+                double roundOffC = Math.round(coreLogic.convertFToC(Double.parseDouble(entry.getText())) * 1000) / 1000.0;
+                double roundOffK = Math.round(coreLogic.convertFToK(Double.parseDouble(entry.getText())) * 1000) / 1000.0;
+                String resultOne = String.valueOf(roundOffC);
+                String resultTwo = String.valueOf(roundOffK);
+                String textResult = "Results:\n" + resultOne + " \u00b0C" + "\n" + resultTwo + " K";
                 resultText.setText(textResult);
+                resultText.setManaged(true);
+                resultText.setVisible(true);
             } else {
                 //If user entry isn't a number, show appropriate alert message.
                 converterEntryError();
@@ -93,10 +105,16 @@ public class TemperatureConverter extends Application {
         //If chosen "C to F", will display ℃.
         //If chosen "F to C", will display ℉.
         Object choiceBoxValue = temperatureChoiceBox.getValue();
-        if (choiceBoxValue == "\u00b0C to \u00b0F") {
+        if (choiceBoxValue == "\u00b0C") {
             entry.setPromptText("\u00b0C");
-        } else if (choiceBoxValue == "\u00b0F to \u00b0C") {
+            resultText.setText("");
+            resultText.setVisible(false);
+            resultText.setManaged(false);
+        } else if (choiceBoxValue == "\u00b0F") {
             entry.setPromptText("\u00b0F");
+            resultText.setText("");
+            resultText.setVisible(false);
+            resultText.setManaged(false);
         }
     }
 

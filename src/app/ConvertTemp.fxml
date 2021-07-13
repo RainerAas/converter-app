@@ -2,27 +2,34 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.text.Text?>
-<GridPane styleClass="mainContainer" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1"
-          xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.TemperatureConverter">
+<GridPane styleClass="mainContainer" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.TemperatureConverter">
+
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" percentWidth="2.0" />
+        <ColumnConstraints hgrow="ALWAYS" percentWidth="68.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints percentHeight="15.0" vgrow="ALWAYS" />
+        <RowConstraints percentHeight="15.0" vgrow="ALWAYS" />
+        <RowConstraints percentHeight="15.0" vgrow="ALWAYS" />
+        <RowConstraints percentHeight="15.0" vgrow="ALWAYS" />
+      <RowConstraints />
+
+    </rowConstraints>
 
     <children>
 
-        <ChoiceBox fx:id="temperatureChoiceBox" onAction="#setPrompt" styleClass="choiceBox" GridPane.columnIndex="1"
-                   GridPane.rowIndex="1" GridPane.halignment="CENTER"
-                   GridPane.valignment="CENTER"/>
+        <Text fx:id="topText" styleClass="generalText" text="Choose an unit to convert" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
 
-        <TextField fx:id="entry" onAction="#convertTemperatures" styleClass="entry-field" GridPane.columnIndex="1"
-                   GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER"/>
+        <ChoiceBox fx:id="temperatureChoiceBox" onAction="#setPrompt" styleClass="choiceBox" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
 
-        <Button fx:id="calculateButton" onAction="#convertTemperatures" styleClass="calculateButton" text="Calculate"
-                GridPane.columnIndex="1"
-                GridPane.rowIndex="3" GridPane.halignment="CENTER"
-                GridPane.valignment="CENTER"/>
+        <TextField fx:id="entry" onAction="#convertTemperatures" styleClass="entry-field" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
 
-        <Text fx:id="resultText" styleClass="resultText" text="Result:" GridPane.columnIndex="1" GridPane.rowIndex="4"
-              GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+        <Button fx:id="calculateButton" onAction="#convertTemperatures" styleClass="calculateButton" text="Calculate" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+
+        <Text fx:id="resultText" styleClass="generalText" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
 
     </children>
 
