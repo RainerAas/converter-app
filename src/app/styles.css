@@ -8,7 +8,7 @@
     -fx-pref-height: 25px;
     -fx-pref-width: 100px;
 
-    -fx-background-color: #093145;
+    -fx-background-color: #941e1e;
 
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
@@ -34,7 +34,7 @@
     -fx-pref-height: 25px;
     -fx-pref-width: 100px;
 
-    -fx-background-color: #093145;
+    -fx-background-color: #941e1e;
     -fx-text-fill: white;
     -fx-font-family: Arial;
     -fx-font-size: 14px;
@@ -78,7 +78,7 @@
 }
 
 .choiceBox .context-menu {
-    -fx-background-color: #093145;
+    -fx-background-color: #c72828;
 
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
@@ -93,5 +93,5 @@
 }
 
 .choiceBox .menu-item:focused {
-    -fx-background-color: #0e4e6e;
+    -fx-background-color: #941e1e;
 }

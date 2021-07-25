@@ -7,7 +7,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.util.logging.Level;
@@ -25,13 +24,10 @@ public class Main extends Application {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             if (temperatureWindowButton.isHover()) {
-                fxmlLoader.setLocation(getClass().getResource("ConvertTemp.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("temperature/ConvertTemp.fxml"));
             } else if (currencyWindowButton.isHover()) {
-                fxmlLoader.setLocation(getClass().getResource("ConvertCurrencies.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("currency/ConvertCurrencies.fxml"));
             }
-
-             // if "fx:controller" is not set in fxml
-             // fxmlLoader.setController(NewWindowController);
 
             Scene scene = new Scene(fxmlLoader.load(), 250, 250);
             Stage stage = new Stage();
@@ -50,7 +46,8 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
         primaryStage.setTitle("Unit Converter");
 
-        Scene scene = new Scene(root, 400, 275);
+
+        Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
 
         primaryStage.setScene(scene);

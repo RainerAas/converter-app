@@ -1,5 +1,6 @@
-package app;
+package app.temperature;
 
+import app.CoreLogic;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,7 +12,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -130,7 +130,7 @@ public class TemperatureConverter extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("ConvertTemp.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("temperature/ConvertTemp.fxml"));
         primaryStage.setTitle("Temperature converter");
 
         Scene scene = new Scene(root, 200, 200);
