@@ -2,28 +2,26 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.text.Text?>
-<GridPane styleClass="mainContainer" stylesheets="@../styles.css" xmlns="http://javafx.com/javafx/11.0.1"
-          xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.currency.CurrencyConverter">
+<AnchorPane maxHeight="200.0" maxWidth="250.0" minHeight="200.0" minWidth="250.0" prefHeight="200.0" prefWidth="250" styleClass="mainContainer" stylesheets="@../styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.currency.CurrencyConverter">
 
     <children>
 
-        <ChoiceBox fx:id="temperatureChoiceBox" styleClass="choiceBox" GridPane.columnIndex="1"
-                   GridPane.rowIndex="1" GridPane.halignment="CENTER"
-                   GridPane.valignment="CENTER"/>
-
-        <TextField fx:id="entry" styleClass="entry-field" GridPane.columnIndex="1"
-                   GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER"/>
-
-        <Button fx:id="calculateButton" styleClass="calculateButton" text="Calculate"
-                GridPane.columnIndex="1"
-                GridPane.rowIndex="3" GridPane.halignment="CENTER"
-                GridPane.valignment="CENTER"/>
-
-        <Text fx:id="resultText" styleClass="generalText" text="Result:" GridPane.columnIndex="1" GridPane.rowIndex="4"
-              GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="250.0">
+            <children>
+              <HBox alignment="TOP_CENTER" prefHeight="38.0" prefWidth="200.0">
+                  <children>
+                      <TextField fx:id="entry" onAction="#convertCurrencies" promptText="Amount" styleClass="entry-field" />
+                      <ComboBox fx:id="baseCurrency" onAction="#eraseResult" prefWidth="137.0" styleClass="comboBox"/>
+                  </children>
+              </HBox>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="generalText" text="To" />
+                <ComboBox fx:id="desiredCurrency" onAction="#eraseResult" prefWidth="150.0" styleClass="comboBox" />
+                <Button fx:id="calculateButton" mnemonicParsing="false" onAction="#convertCurrencies" styleClass="calculateButton" text="Calculate" />
+                <Text fx:id="resultText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="generalText" visible="false" />
+            </children>
+        </VBox>
 
     </children>
-
-</GridPane>
+</AnchorPane>

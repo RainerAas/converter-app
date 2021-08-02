@@ -8,27 +8,20 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class TemperatureConverter extends Application {
 
-    ObservableList<String> temperatureChoiceList =
-            FXCollections.observableArrayList("\u00b0C", "\u00b0F");
-
-    // ℃ = \u2103
-    // ℉ = \u2109
-    // ° = \u00b0
+//    ADD K to C and K to F!
 
     @FXML
     public Text topText;
 
     @FXML
-    public ChoiceBox temperatureChoiceBox;
+    public ComboBox temperatureComboBox;
 
     @FXML
     public TextField entry;
@@ -41,14 +34,23 @@ public class TemperatureConverter extends Application {
 
     @FXML
     private void initialize() {
+
+        //Add choices to the choice box.
+        ObservableList<String> temperatureChoiceList =
+                FXCollections.observableArrayList("\u00b0C", "\u00b0F");
+
+        // ℃ = \u2103
+        // ℉ = \u2109
+        // ° = \u00b0
+
         //Add "C" and "F" to choices.
-        temperatureChoiceBox.setItems(temperatureChoiceList);
-        temperatureChoiceBox.setValue("\u00b0C");
+        temperatureComboBox.setItems(temperatureChoiceList);
+        temperatureComboBox.setValue("\u00b0C");
     }
 
     //Main temperature converting method.
     public void convertTemperatures() {
-        Object choiceBoxValue = temperatureChoiceBox.getValue();
+        Object choiceBoxValue = temperatureComboBox.getValue();
         //C -> F, K
         if (choiceBoxValue == "\u00b0C") {
             //Continue only on numbers.
@@ -104,7 +106,7 @@ public class TemperatureConverter extends Application {
         //Adds prompt message to entry box.
         //If chosen "C to F", will display ℃.
         //If chosen "F to C", will display ℉.
-        Object choiceBoxValue = temperatureChoiceBox.getValue();
+        Object choiceBoxValue = temperatureComboBox.getValue();
         if (choiceBoxValue == "\u00b0C") {
             entry.setPromptText("\u00b0C");
             resultText.setText("");
@@ -136,6 +138,7 @@ public class TemperatureConverter extends Application {
         Scene scene = new Scene(root, 200, 200);
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
 
+        primaryStage.initModality(Modality.APPLICATION_MODAL);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

@@ -11,13 +11,14 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 
-<!--To do:
+<!--
+    To do:
     all styles to css file;
-    coloring;
-    add button actions;
+    coloring (gradient);
     make button images;
-    add functionality;
+    cursor effects (to all fxml);
     scalability?
+    animations?
 -->
 
 <AnchorPane stylesheets="@styles.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"

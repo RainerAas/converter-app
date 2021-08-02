@@ -4,7 +4,7 @@
     -fx-alignment: center;
 }
 
-.choiceBox {
+.comboBox {
     -fx-pref-height: 25px;
     -fx-pref-width: 100px;
 
@@ -15,6 +15,13 @@
     -fx-border-color: black;
     -fx-border-insets: 5px;
     -fx-background-insets: 5px;
+
+    -fx-cursor: hand;
+
+    -fx-text-fill: white;
+    -fx-font-family: Arial;
+    -fx-font-size: 14px;
+    -fx-font-weight: bolder;
 }
 
 .entry-field {
@@ -28,6 +35,8 @@
     -fx-border-color: black;
     -fx-border-insets: 5px;
     -fx-background-insets: 5px;
+
+    -fx-cursor: text;
 }
 
 .calculateButton {
@@ -45,9 +54,9 @@
     -fx-border-color: black;
     -fx-border-insets: 5px;
     -fx-background-insets: 5px;
+
+    -fx-cursor: hand;
 }
-
-
 .generalText {
     -fx-text-fill: white;
     -fx-font-family: Arial;
@@ -64,34 +73,33 @@
     -fx-effect: dropshadow(three-pass-box, darkgray, 6, 0, 3, 3);
 }
 
-.choiceBox:hover {
+.comboBox:hover {
     -fx-scale-y: 1.1;
     -fx-scale-x: 1.1;
     -fx-effect: dropshadow(three-pass-box, darkgray, 6, 0, 3, 3);
 }
 
-.choiceBox .label {
-    -fx-text-fill: white;
-    -fx-font-family: Arial;
-    -fx-font-size: 14px;
-    -fx-font-weight: bolder;
-}
-
-.choiceBox .context-menu {
-    -fx-background-color: #c72828;
-
-    -fx-border-radius: 5px;
-    -fx-background-radius: 5px;
-    -fx-border-color: black;
-    -fx-border-insets: 5px;
-    -fx-background-insets: 5px;
-
-    -fx-text-fill: white;
-    -fx-font-family: Arial;
-    -fx-font-size: 14px;
-    -fx-font-weight: bolder;
-}
-
-.choiceBox .menu-item:focused {
+.comboBox .list-cell {
     -fx-background-color: #941e1e;
+
+    -fx-text-fill: white;
+    -fx-font-family: Arial;
+    -fx-font-size: 14px;
+    -fx-font-weight: bolder;
+}
+
+.comboBox .list-cell:hover {
+    -fx-background-color: #c72828;
+    -fx-cursor: hand;
+    -fx-scale-y: 1.1;
+    -fx-scale-x: 1.1;
+    -fx-effect: dropshadow(three-pass-box, darkgray, 6, 0, 3, 3);
+}
+
+.comboBox .arrow-button .arrow {
+    -fx-background-color: white;
+}
+
+.comboBox .scroll-bar{
+    -fx-background-color: white;
 }

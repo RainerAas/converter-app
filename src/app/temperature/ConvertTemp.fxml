@@ -4,28 +4,27 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane styleClass="mainContainer" stylesheets="@../styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.temperature.TemperatureConverter">
+<GridPane maxHeight="225.0" maxWidth="230.0" minHeight="225.0" minWidth="230.0" prefHeight="225.0" prefWidth="230.0" styleClass="mainContainer" stylesheets="@../styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.temperature.TemperatureConverter">
 
     <columnConstraints>
         <ColumnConstraints hgrow="ALWAYS" percentWidth="2.0" />
-        <ColumnConstraints hgrow="ALWAYS" percentWidth="68.0" />
+      <ColumnConstraints />
     </columnConstraints>
     <rowConstraints>
         <RowConstraints percentHeight="15.0" vgrow="ALWAYS" />
         <RowConstraints percentHeight="15.0" vgrow="ALWAYS" />
         <RowConstraints percentHeight="15.0" vgrow="ALWAYS" />
         <RowConstraints percentHeight="15.0" vgrow="ALWAYS" />
-      <RowConstraints />
-
+        <RowConstraints />
     </rowConstraints>
 
     <children>
 
         <Text fx:id="topText" styleClass="generalText" text="Choose an unit to convert" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
 
-        <ChoiceBox fx:id="temperatureChoiceBox" onAction="#setPrompt" styleClass="choiceBox" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+        <ComboBox fx:id="temperatureComboBox" onAction="#setPrompt" styleClass="comboBox" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
 
-        <TextField fx:id="entry" onAction="#convertTemperatures" styleClass="entry-field" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+        <TextField fx:id="entry" onAction="#convertTemperatures" prefHeight="38.0" prefWidth="250.0" styleClass="entry-field" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
 
         <Button fx:id="calculateButton" onAction="#convertTemperatures" styleClass="calculateButton" text="Calculate" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
 
