@@ -18,8 +18,6 @@ import java.util.logging.Logger;
 
 public class Main extends Application {
 
-    //Võib ühised meetodid kunagi ka kokku võtta ja ülemklassi viia
-
     @FXML
     public Button temperatureWindowButton;
 
@@ -49,6 +47,7 @@ public class Main extends Application {
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
 
         stage.setTitle(title);
         stage.setScene(scene);

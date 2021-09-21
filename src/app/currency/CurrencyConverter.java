@@ -22,9 +22,6 @@ import java.util.Locale;
 
 public class CurrencyConverter extends Application {
 
-    //Add flags to currency symbols if it ain't too hard
-    //Add jump to pressed key (comboBox)
-
     @FXML
     public TextField entry;
 

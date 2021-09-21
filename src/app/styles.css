@@ -1,14 +1,17 @@
 .mainContainer {
-    -fx-pref-width: -1;
-    -fx-pref-height: -1;
     -fx-alignment: center;
+    -fx-background-color: #fff;
+}
+
+.headerContainer {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, rgba(22,0,36,1), rgba(105,40,40,1));
 }
 
 .comboBox {
     -fx-pref-height: 25px;
     -fx-pref-width: 100px;
 
-    -fx-background-color: #941e1e;
+    -fx-background-color: rgba(22,0,36,1);
 
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
@@ -43,7 +46,7 @@
     -fx-pref-height: 25px;
     -fx-pref-width: 100px;
 
-    -fx-background-color: #941e1e;
+    -fx-background-color: rgba(22,0,36,1);
     -fx-text-fill: white;
     -fx-font-family: Arial;
     -fx-font-size: 14px;
@@ -80,7 +83,7 @@
 }
 
 .comboBox .list-cell {
-    -fx-background-color: #941e1e;
+    -fx-background-color: rgba(22,0,36,1);
 
     -fx-text-fill: white;
     -fx-font-family: Arial;
@@ -89,7 +92,7 @@
 }
 
 .comboBox .list-cell:hover {
-    -fx-background-color: #c72828;
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, rgba(22,0,36,1), rgba(105,40,40,1));
     -fx-cursor: hand;
     -fx-scale-y: 1.1;
     -fx-scale-x: 1.1;

@@ -15,8 +15,6 @@ import javafx.stage.Stage;
 
 public class TemperatureConverter extends Application {
 
-//    ADD K to C and K to F!
-
     @FXML
     public Text topText;
 

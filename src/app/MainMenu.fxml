@@ -11,21 +11,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 
-<!--
-    To do:
-    all styles to css file;
-    coloring (gradient);
-    make button images;
-    cursor effects (to all fxml);
-    scalability?
-    animations?
--->
-
 <AnchorPane stylesheets="@styles.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-            minWidth="-Infinity" prefHeight="618.0" prefWidth="943.0" style="-fx-background-color: #fff;"
+            minWidth="-Infinity" prefHeight="618.0" prefWidth="943.0" styleClass="mainContainer"
             xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Main">
     <children>
-        <Pane prefHeight="173.0" prefWidth="980.0" style="-fx-background-color: #c72828;" AnchorPane.leftAnchor="0.0"
+        <Pane prefHeight="173.0" prefWidth="980.0" styleClass="headerContainer" AnchorPane.leftAnchor="0.0"
               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <Label layoutX="130.0" layoutY="44.0" text="Converter App" textFill="WHITE">
